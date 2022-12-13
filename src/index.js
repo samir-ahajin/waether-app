@@ -8,6 +8,7 @@ let sbutton = document.getElementById("search-btn");
   let searchData = await mainWeatherInfo.data(sval);
   details.show(searchData);
 })();
+
 sbutton.addEventListener("click", async () => {
   let sval = document.getElementById("search").value;
 
