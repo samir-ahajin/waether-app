@@ -24,7 +24,7 @@ let mainWeatherInfo = (() => {
   async function data(city) {
     try {
       const weatherResponse = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bc17df3c5c4a68ed03f277a1b5080ced`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bc17df3c5c4a68ed03f277a1b5080ced`,
         { mode: "cors" }
       );
       if (!weatherResponse.ok) {
