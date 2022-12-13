@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-app</title>
+    <link rel="stylesheet" href="design.css" />
+  </head>
+  <body>
+    <div id="main-con">
+      <div id="head">
+        <div><h1>WEATHER-APP</h1></div>
+        <div><input id="search" type="search" /></div>
+        <div><button id="search-btn">Search</button></div>
+      </div>
+      <div id="main-info" class="expand">
+        <div id="text-info">
+          <div id="city-name"></div>
+          <div id="cloud-desc"></div>
+        </div>
+        <div id="details">
+          <div id="temp"></div>
+          <div id="w-icon"><img id="weather-icon" /></div>
+        </div>
+
+        <div id="infos" class="expand">
+          <ul>
+            <li>
+              <div>Visibility</div>
+              <div id="visibility"></div>
+            </li>
+            <li>
+              <div>Humidity</div>
+              <div id="humid"></div>
+            </li>
+            <li>
+              <div>Pressure</div>
+              <div id="pressure"></div>
+            </li>
+            <li>
+              <div>Temperature (minimum-maximum)</div>
+              <div id="temp-minmax"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
