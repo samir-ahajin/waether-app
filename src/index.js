@@ -7,7 +7,6 @@ sbutton.addEventListener("click", async () => {
 
   let searchData = await mainWeatherInfo.data(sval);
   details.show(searchData);
-  console.log(searchData);
 });
 
 window.onload = async () => {
