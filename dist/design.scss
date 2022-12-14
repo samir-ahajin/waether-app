@@ -1,15 +1,25 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
+  transition: 0.2s;
 }
 @mixin center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+@mixin scale {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 body {
   @include center();
+  background-image: url("./resources/weather.jpg");
+  background-size: cover cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
+  background-color: rgb(4 36 51);
   #head {
     display: grid;
     grid-template-rows: repeat(auto-fill, 1fr);
@@ -20,23 +30,42 @@ body {
     div:last-child {
       padding: 1rem;
     }
-    #search {
+    #searchbar {
       width: 100%;
-      min-width: 300px;
-      max-width: 600px;
+      display: grid;
+      grid-template-columns: 1fr 86px;
+    }
+    #search {
+      border-radius: 10px 0 0 10px;
+    }
+    #search:focus {
+      outline: none;
     }
     #search-btn {
+      background-color: rgb(15, 15, 19);
+      color: white;
       max-width: 100px;
+      border-radius: 0 10px 10px 0;
+    }
+    #search-btn:hover {
+      background-color: rgb(95, 95, 95);
+      color: white;
+    }
+    #search,
+    #search-btn {
+      padding: 6px 1rem;
+      border-style: none;
     }
   }
   #main-con {
     width: 900px;
-    background-color: red;
-    padding: 1rem;
+    height: auto;
+    background-color: hsla(0, 0%, 0%, 0.281);
+    padding: 2rem;
 
     #main-info {
       text-align: center;
-      max-height: 500px;
+
       #text-info {
         #city-name {
           padding: 4px;
@@ -45,13 +74,12 @@ body {
         }
       }
       #details {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        @include scale();
 
         #temp {
           display: flex;
           align-items: center;
-          justify-content: end;
+          justify-content: center;
           font-size: 80px;
         }
         #w-icon {
@@ -66,8 +94,7 @@ body {
           padding: 0;
 
           li {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            @include scale();
 
             div {
               @include center();

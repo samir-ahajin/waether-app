@@ -22,20 +22,25 @@ let mainWeatherInfo = (() => {
   }
 
   async function data(city) {
+    let err = document.getElementById("errormessage");
     try {
       const weatherResponse = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=bc17df3c5c4a68ed03f277a1b5080ced`,
         { mode: "cors" }
       );
       if (!weatherResponse.ok) {
-        console.log("hello");
+        err.textContent =
+          "Location not Found. Must be in 'City', 'City,State', 'City,Country'";
+        console.clear();
       } else {
+        err.textContent = "";
         const weatherData = await weatherResponse.json();
         let info = new currentData(weatherData);
         return info;
       }
     } catch (err) {
-      console.error(err);
+      err.textContent = "Location not Found.";
+      console.clear();
     }
   }
   return { data };
