@@ -5,66 +5,82 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  background-color: rgb(4, 36, 51);
   background-image: url("./resources/weather.jpg");
-  background-size: cover cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
-  background-color: rgb(4, 36, 51);
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
-body #head {
+body #main-con {
+  padding: 1rem;
+  background-color: hsla(0deg, 0%, 0%, 0.281);
+  max-width: 900px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body #main-con #head {
   display: grid;
   grid-template-rows: repeat(auto-fill, 1fr);
   text-align: center;
 }
-body #head div:first-child {
-  padding: 1rem !important;
+body #main-con #head div:first-child h1 {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 1rem 0;
 }
-body #head div:last-child {
+body #main-con #head div:last-child {
   padding: 1rem;
 }
-body #head #searchbar {
+body #main-con #head #searchbar {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 86px;
 }
-body #head #search {
+body #main-con #head #search {
   border-radius: 10px 0 0 10px;
 }
-body #head #search:focus {
+body #main-con #head #search:focus {
   outline: none;
 }
-body #head #search-btn {
+body #main-con #head #search-btn {
   background-color: rgb(15, 15, 19);
-  color: white;
+  color: rgb(255, 255, 255);
   max-width: 100px;
   border-radius: 0 10px 10px 0;
 }
-body #head #search-btn:hover {
+body #main-con #head #search-btn:hover {
   background-color: rgb(95, 95, 95);
   color: white;
 }
-body #head #search,
-body #head #search-btn {
+body #main-con #head #search,
+body #main-con #head #search-btn {
   padding: 6px 1rem;
   border-style: none;
 }
-body #main-con {
-  width: 900px;
-  height: auto;
-  background-color: hsla(0deg, 0%, 0%, 0.281);
-  padding: 2rem;
+body #main-con #head #errormessage {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 body #main-con #main-info {
   text-align: center;
 }
 body #main-con #main-info #text-info #city-name {
   padding: 4px;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+  color: rgb(248, 141, 0);
+  text-decoration: underline;
+  text-shadow: 2px 2px 4px #000000;
+}
+body #main-con #main-info #text-info #cloud-desc {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
 }
 body #main-con #main-info #details {
   display: grid;
@@ -75,6 +91,8 @@ body #main-con #main-info #details #temp {
   align-items: center;
   justify-content: center;
   font-size: 80px;
+  color: rgb(248, 141, 0);
+  text-shadow: 2px 2px 4px #000000;
 }
 body #main-con #main-info #details #w-icon #weather-icon {
   width: 300px;
@@ -93,6 +111,7 @@ body #main-con #main-info #infos ul li div {
   justify-content: center;
   height: 30px;
   padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 body #main-con #main-info #infos ul li div:nth-child(odd) {
   background-color: rgb(216, 216, 216);
@@ -103,12 +122,12 @@ body #main-con #main-info #infos ul li div:nth-child(even) {
   background-color: rgb(36, 35, 35);
 }
 
-@media all and (max-width: 662px) {
+@media all and (max-width: 450px) {
   body #main-info #details #temp {
-    font-size: 10vw;
+    padding: 1rem;
   }
   body #main-info #details #w-icon #weather-icon {
-    width: 40vw;
+    width: 500px;
   }
   body #main-info #infos ul li div:nth-child(odd) {
     border-bottom: none;
