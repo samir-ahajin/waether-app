@@ -1,13 +1,19 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
+  transition: 0.2s;
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("./resources/weather.jpg");
+  background-size: cover cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
+  background-color: rgb(4, 36, 51);
 }
 body #head {
   display: grid;
@@ -20,22 +26,40 @@ body #head div:first-child {
 body #head div:last-child {
   padding: 1rem;
 }
-body #head #search {
+body #head #searchbar {
   width: 100%;
-  min-width: 300px;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 86px;
+}
+body #head #search {
+  border-radius: 10px 0 0 10px;
+}
+body #head #search:focus {
+  outline: none;
 }
 body #head #search-btn {
+  background-color: rgb(15, 15, 19);
+  color: white;
   max-width: 100px;
+  border-radius: 0 10px 10px 0;
+}
+body #head #search-btn:hover {
+  background-color: rgb(95, 95, 95);
+  color: white;
+}
+body #head #search,
+body #head #search-btn {
+  padding: 6px 1rem;
+  border-style: none;
 }
 body #main-con {
   width: 900px;
-  background-color: red;
-  padding: 1rem;
+  height: auto;
+  background-color: hsla(0deg, 0%, 0%, 0.281);
+  padding: 2rem;
 }
 body #main-con #main-info {
   text-align: center;
-  max-height: 500px;
 }
 body #main-con #main-info #text-info #city-name {
   padding: 4px;
@@ -44,12 +68,12 @@ body #main-con #main-info #text-info #city-name {
 }
 body #main-con #main-info #details {
   display: grid;
-  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 body #main-con #main-info #details #temp {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   font-size: 80px;
 }
 body #main-con #main-info #details #w-icon #weather-icon {
@@ -61,7 +85,7 @@ body #main-con #main-info #infos ul {
 }
 body #main-con #main-info #infos ul li {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 body #main-con #main-info #infos ul li div {
   display: flex;
