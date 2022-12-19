@@ -17,7 +17,7 @@ body {
   padding: 1rem;
   background-color: rgb(4 36 51);
   background-image: url("./resources/weather.jpg");
-  background-size: cover;
+
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -27,7 +27,6 @@ body {
     padding: 1rem;
     background-color: hsla(0, 0%, 0%, 0.281);
     max-width: 900px;
-
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     #head {
@@ -37,9 +36,11 @@ body {
       div:first-child {
         h1 {
           background-color: black;
+          font-size: 35px;
           color: white;
           width: 100%;
           padding: 1rem 0;
+          margin-bottom: 1rem;
         }
       }
       div:last-child {

@@ -9,7 +9,6 @@ body {
   padding: 1rem;
   background-color: rgb(4, 36, 51);
   background-image: url("./resources/weather.jpg");
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -29,9 +28,11 @@ body #main-con #head {
 }
 body #main-con #head div:first-child h1 {
   background-color: black;
+  font-size: 35px;
   color: white;
   width: 100%;
   padding: 1rem 0;
+  margin-bottom: 1rem;
 }
 body #main-con #head div:last-child {
   padding: 1rem;
