@@ -4,6 +4,7 @@ The Weather-App project is created according to the assignment from **The Odin P
 [Check the weather app here](https://samir-ahajin.github.io/weather-app/)
 
 -Weather app created React.
+<br>
 -Learned how to use an API
 
 
